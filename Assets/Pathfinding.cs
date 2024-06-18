@@ -64,7 +64,6 @@ public class Pathfinding : MonoBehaviour
                     if (!openSet.Contains(neighbour))
                         openSet.Add(neighbour);
 
-                    DisplayCost(neighbour);
                 }
             }
 
@@ -95,19 +94,5 @@ public class Pathfinding : MonoBehaviour
         if (dstX > dstY)
             return 14 * dstY + 10 * (dstX - dstY);
         return 14 * dstX + 10 * (dstY - dstX);
-    }
-
-    void DisplayCost(Node node)
-    {
-/*        GameObject costText = new GameObject("CostText");
-        costText.transform.SetParent(GameObject.Find("Canvas").transform);
-        Text text = costText.AddComponent<Text>();
-        text.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
-        text.text = (node.gCost + node.hCost).ToString();
-        text.color = Color.black;
-        text.fontSize = 20;
-
-        RectTransform rectTransform = costText.GetComponent<RectTransform>();
-        rectTransform.anchoredPosition = Camera.main.WorldToScreenPoint(node.worldPosition);*/
     }
 }
